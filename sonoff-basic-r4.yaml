@@ -4,19 +4,11 @@ esphome:
 
   name_add_mac_suffix: true
 
-  # platformio_options:
-  #   board_build.mcu: esp32c3
-  #   board_build.variant: esp32c3
-
 esp32:
   variant: ESP32C3
   board: esp32-c3-devkitm-1
   framework:
-    type: esp-idf
-    # sdkconfig_options:
-    #   CONFIG_BT_BLE_50_FEATURES_SUPPORTED: y
-    #   CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
-    #   CONFIG_ESP_TASK_WDT_TIMEOUT_S: "10"
+    type: arduino
 
 logger:
 
@@ -42,28 +34,6 @@ web_server:
 
 captive_portal:
 
-#magic switch mode
-external_components:
-  - source:
-      type: git
-      url: https://github.com/ssieb/esphome_components
-    components: [ magic_switch ]
-    refresh: 1min
-
-magic_switch:
-  pin: 5
-  on_switch:
-    - switch.toggle: switch_1
-
-esp32_ble_tracker:
-  scan_parameters:
-    active: true
-    interval: 1100ms
-    window: 1100ms
-
-bluetooth_proxy:
-  active: true
-
 binary_sensor:
   - platform: gpio
     pin:
@@ -79,11 +49,11 @@ binary_sensor:
 
 switch:
 - platform: gpio
-  name: Tomada
+  name: none
   id: switch_1
   pin:
     number: 04
-  restore_mode: ALWAYS_OFF
+  restore_mode: RESTORE_DEFAULT_OFF
 
 status_led:
   pin:
