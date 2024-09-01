@@ -12,7 +12,8 @@ esp32:
 
 logger:
 
-api:
+packages:
+  homeassistant: !include includes/homeassistant_config.yaml
 
 http_request:
   verify_ssl: false
@@ -28,6 +29,7 @@ update:
     source: https://diekruecke.github.io/sonoff-basic-r4/firmware/manifest.json
 
 wifi:
+  domain: ".smarthome"
   ap:
 
 web_server:
