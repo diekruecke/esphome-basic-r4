@@ -18,10 +18,6 @@ esp32:
       CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
       CONFIG_ESP_TASK_WDT_TIMEOUT_S: "10"
 
-web_server:
-
-mdns:
-
 logger:
 
 api:
@@ -40,6 +36,9 @@ update:
 
 wifi:
   ap:
+
+web_server:
+  version: 3
 
 captive_portal:
 
