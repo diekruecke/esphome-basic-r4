@@ -4,9 +4,9 @@ esphome:
 
   name_add_mac_suffix: true
 
-  platformio_options:
-    board_build.mcu: esp32c3
-    board_build.variant: esp32c3
+  # platformio_options:
+  #   board_build.mcu: esp32c3
+  #   board_build.variant: esp32c3
 
 esp32:
   variant: ESP32C3
@@ -32,7 +32,7 @@ update:
   - platform: http_request
     id: firmware_update_start
     name: Firmware Update
-    source: https://diekruecke.github.io/sonoff-basic-r4/firmware/sonoff-basic-r4/manifest.json
+    source: https://diekruecke.github.io/sonoff-basic-r4/firmware/manifest.json
 
 wifi:
   ap:
